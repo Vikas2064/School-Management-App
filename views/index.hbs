@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>School_management_app</title>
+</head>
+
+<body>
+    <nav style="background-color: #000085;">
+        <div class="container nav_container">
+            <a href="/">    
+                <h4>S. G. M.</h4>
+            </a>
+            <ul class="nav_menu">
+                <li><a href="/">home</a></li>
+                <li><a href="/admin">admin</a></li>
+                <li><a href="/teacher">Teacher</a></li>
+                <li><a href="/student">Student</a></li>
+                <li><a href="/about">about</a></li>
+                {{!-- <li><a href="/course">courses</a></li> --}}
+                <li><a href="javascript: document.body.scrollIntoView(false);">contact</a></li>
+            </ul>
+            <div style="right: 0;">
+                {{!-- <button id="open-menu-button" ><img src="../CSS/images/menu.png" alt="" style="height: 40px;width: 40px; "></button> --}}
+                <button id="open-menu-button" ><img src="../CSS/images/menu.png" alt="" style="height: 40px;width: 40px; "></button>
+                <button id="close-menu-button"><img src="../CSS/images/close.png" alt=""style="height: 40px;width: 40px;"></button>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="container header_container">
+            <div class="header_left">
+                <h1>
+                    Grow your skill to advance your career path
+                </h1>
+                <p> 
+                    suscipit sed itaque repellat exercitationem! Voluptas itaque rerum eum.
+                </p>
+                {{!-- <a href="/course" class="btn btn_primary">Get Started</a> --}}
+            </div>
+            <div class="header_right">
+                <div class="header_right-image">
+                    <img src="../CSS/images/header.svg" alt="header_image" style="min-width: 200px; min-height: 200x;">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="categories">
+        <div class="container categories_container">
+            <div class="categories_left">
+                <h1>About us</h1>
+                <p> laudantium, ea dolorem sequi autem, recusandae quod, illo enim dolores
+                </p>
+                <a href="/about" class="btn">heyyy</a>
+            </div>
+            <div class="categories_right">
+                <article class="category">
+                    <span class="category_icon"><img src="../CSS/images/bitcoin.png"
+                            style="height:1.3rem;width:1.4rem"></span>
+                    <h5>Point 1</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </article>
+
+                <article class="category">
+                    <span class="category_icon"><img src="../CSS/images/bitcoin.png"
+                            style="height:1.3rem;width:1.4rem"></span>
+                    <h5>Point 2</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+                </article>
+
+                <article class="category">
+                    <span class="category_icon"><img src="../CSS/images/bitcoin.png"
+                            style="height:1.3rem;width:1.4rem"></span>
+                    <h5>Point 3</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+                </article>
+
+                <article class="category">
+                    <span class="category_icon"><img src="../CSS/images/bitcoin.png"
+                            style="height:1.3rem;width:1.4rem"></span>
+                    <h5>Point 4</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </article>
+
+                <article class="category">
+                    <span class="category_icon"><img src="../CSS/images/bitcoin.png"
+                            style="height:1.3rem;width:1.4rem"></span>
+                    <h5>point 5</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                </article>
+
+                <article class="category">
+                    <span class="category_icon"><img src="../CSS/images/bitcoin.png"
+                            style="height:1.3rem;width:1.4rem"></span>
+                    <h5>point 6</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+   
+    
+    <section class="faqs">
+        <h2>Frequently ask question</h2>
+        <div class="container faqs_container">
+            <article class="faq open">
+                <div class="faq_icon">
+                    <img src="../CSS/images/question.png" alt="" style="height:25px; width:25px;">
+                </div>
+                <div class="question_ans">
+                    <h4>question no 1</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        voluptatibus, cupiditate dolorem unde explicabo facere impedit est
+                        ratione neque cumque aliquam. Incidunt voluptatibus perspiciatis
+                        accusantium voluptatum libero? Aliquid, dolores cupiditate?</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq_icon">
+                    <img src="../CSS/images/question.png" alt="" style="height:25px; width:25px;">
+                </div>
+                <div class="question_ans">
+                    <h4>question no 2</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        voluptatibus, cupiditate dolorem unde explicabo facere impedit est
+                        ratione neque cumque aliquam. Incidunt voluptatibus perspiciatis
+                        accusantium voluptatum libero? Aliquid, dolores cupiditate?</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq_icon">
+                    <img src="../CSS/images/question.png" alt="" style="height:25px; width:25px;">
+                </div>
+                <div class="question_ans">
+                    <h4>question no 3</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        voluptatibus, cupiditate dolorem unde explicabo facere impedit est
+                        ratione neque cumque aliquam. Incidunt voluptatibus perspiciatis
+                        accusantium voluptatum libero? Aliquid, dolores cupiditate?</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq_icon">
+                    <img src="../CSS/images/question.png" alt="" style="height:25px; width:25px;">
+                </div>
+                <div class="question_ans">
+                    <h4>question no 4</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        voluptatibus, cupiditate dolorem unde explicabo facere impedit est
+                        ratione neque cumque aliquam. Incidunt voluptatibus perspiciatis
+                        accusantium voluptatum libero? Aliquid, dolores cupiditate?</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq_icon">
+                    <img src="../CSS/images/question.png" alt="" style="height:25px; width:25px;">
+                </div>
+                <div class="question_ans">
+                    <h4>question no 5</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        voluptatibus, cupiditate dolorem unde explicabo facere impedit est
+                        ratione neque cumque aliquam. Incidunt voluptatibus perspiciatis
+                        accusantium voluptatum libero? Aliquid, dolores cupiditate?</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq_icon">
+                    <img src="../CSS/images/question.png" alt="" style="height:25px; width:25px;">
+                </div>
+                <div class="question_ans">
+                    <h4>question no 6</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        voluptatibus, cupiditate dolorem unde explicabo facere impedit est
+                        ratione neque cumque aliquam. Incidunt voluptatibus perspiciatis
+                        accusantium voluptatum libero? Aliquid, dolores cupiditate?</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <section class="container testimonal_container mySwiper">
+        <h2>Student Testimonial</h2>
+        <div class="swiper-wrapper">
+            <article class="testmonial swiper-slide">
+                <div class="avatar">
+                    <img src="../CSS/images/avatar6.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Abc</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+
+            <article class="testmonial swiper-slide">
+                <div class="avatar">
+                    <img src="../CSS/images/avatar2.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Acb</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+
+            <article class="testmonial swiper-slide">
+                <div class="avatar ">
+                    <img src="../CSS/images/avatar3.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Bac</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+
+            <article class="testmonial swiper-slide">
+                <div class="avatar">
+                    <img src="../CSS/images/avatar4.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Bca</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+
+            <article class="testmonial swiper-slide">
+                <div class="avatar">
+                    <img src="../CSS/images/avatar5.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Cab</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+
+            <article class="testmonial swiper-slide">
+                <div class="avatar">
+                    <img src="../CSS/images/avatar1.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Cba</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+
+            <article class="testmonial swiper-slide">
+                <div class="avatar">
+                    <img src="../CSS/images/avatar7.jpg" alt="">
+                </div>
+                <div class="testmonial_info">
+                    <h5>Abdc</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial_body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        earum dolor aspernatur
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+    <footer class="footer">
+        <div class="container footer_container">
+            <div class="footer1">
+                <a href="index.html" class="footer_logo">
+                    <h4>S.G.M.</h4>
+                </a>
+                <p>
+                    Temporibus magnam beatae unde non nam in error blanditiis.
+                </p>
+            </div>
+            <div class="footer2">
+                <h4>Premalinks</h4>
+                <ul class="premalink">
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="index.html">about</a></li>
+                    <li><a href="index.html">courses</a></li>
+                    <li><a href="index.html">contact</a></li>
+                </ul>
+            </div>
+            <div class="footer3">
+                <h4>primacy</h4>
+                <ul class="primacy">
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Trem and conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer4">
+                <h4>contact Us</h4>
+                <div>
+                    <p> 9448579480</p>
+                    <p>sdlkfj@gmail.com</p>
+                </div>
+                <ul class="footer_socials">
+                    <li><a href="#"><img src="../CSS/images/facebook.png" alt="" style="height: 35px; width: 35px;"></a></li>
+                    <li><a href="#"><img src="../CSS/images/facebook.png" alt="" style="height: 35px; width: 35px;"></a></a>
+                    </li>
+                    <li><a href="#"><img src="../CSS/images/facebook.png" alt="" style="height: 35px; width: 35px;"></a></a>
+                    </li>
+                    <li><a href="#"><img src="../CSS/images/facebook.png" alt="" style="height: 35px; width: 35px;"></a></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    {{!-- <script src="faq.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                600: {
+                    slidesPerView: 2
+                }
+            }
+        });
+
+       const faqs= document.querySelectorAll('.faq');
+faqs.forEach((faq)=>{
+    faq.addEventListener('click',()=>{
+        faq.classList.toggle('open');
+    });
+    });
+    </script>
+
+</body>
+
+</html>

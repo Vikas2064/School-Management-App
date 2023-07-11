@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show student</title>
+    <style>
+        button{
+            border: 2px solid white;
+            background-color: blue;
+            border-radius: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    {{!-- this is students approval page
+    --}}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Total student</title>
+    </head>
+
+    <body style="background-color: rgb(14, 102, 102); margin:auto; color:white">
+        <h1>Approval table for student</h1>
+        <div style="color:white">
+            <table class="table table-bordered">
+                <thead >
+                    <tr style="color: white;">
+                        <th scope="col">Serial number</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">add student</th>
+                        <th scope="col">Delete Student</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr style="color: white;">
+                        <th scope="row">1</th>
+                        <td>{{this.FirstName}}</td>
+                        <td>{{this.LastName}}</td>
+                        <td>{{this.DOB}}</td>
+                        <td>{{this.Email}}</td>
+                        <td>{{this.PhoneNumber}}</td>
+                        <td>{{this.Class}}</td>
+                        
+                        <form action="" method="POST"> 
+                                <td>  
+                                    <button value="{{this._id}}" name="add">Add</button>
+                                </td>
+                                <td>
+                                      <button value="{{this._id}}" name="delete">delete</button>
+                                </td>                           
+                        </form>  
+                        
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    </html>
+</body>
+
+</html>

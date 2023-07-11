@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Total student</title>
+</head>
+<body style="background-color: rgb(14, 102, 102); margin:auto; color:white">
+     <h1>table for student</h1>
+<div  style="color:white">
+    <table  class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Serial number</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Email</th>
+                <th scope="col">Max qualification</th>
+                <th scope="col">experiance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{this.FirstName}}</td>
+                <td>{{this.LastName}}</td>
+                <td>{{this.DOB}}</td>
+                <td>{{this.Email}}</td>
+                <td>{{this.PhoneNumber}}</td>
+                <td>{{this.MaxQualification}}</td>
+                <td>{{this.Experiance}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

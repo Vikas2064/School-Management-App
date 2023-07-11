@@ -1,0 +1,27 @@
+[abc] =  only abc
+[^abc]=except abc
+[a-z]  all lowercase letter
+[A-Z]  all uppercase letter
+[a-z A-Z] all uppercase and lowercase
+[0-9]  all none digit number
+
+quantifier  (dicide how many times character should appear)
+
+[expresstion]?  expression occour 0 or 1 times
+[expression]+   expression one or more times
+[expression]*   zero or more times
+[expression]{n}  occour n times
+[expression]{n,} occour n or more times
+[expression]{y,z} occour atleast y times and less than z times
+
+meta character (short form of expression)
+
+\d ------------- [0-9]
+\D ------------- [^0-9]
+\w ------------- [a-z A-Z_0_9]
+\W ------------- [^\w]
+
+
+
+\ tell the computer to treat following character as search for '+
+, '.' or '-'
