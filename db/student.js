@@ -118,6 +118,7 @@ const admins=mongoose.model("admin",adminsch);
 const teachers=mongoose.model('teacher',teachersch)
 const students=mongoose.model('student',studentsch);
 const approveStudent=mongoose.model('approvestudent',studentsch);
+const approveTeacher=mongoose.model('approveteacher',teachersch);
 const class1=mongoose.model('class1',studentsch);
 const class2=mongoose.model('class2',studentsch);
 const class3=mongoose.model('class3',studentsch);
@@ -131,6 +132,7 @@ module.exports={
     teachers:teachers,
     students:students,
     approveStudents:approveStudent,
+    approveTeachers:approveTeacher,
     class1:class1,
     class2:class2,
     class3:class3,
