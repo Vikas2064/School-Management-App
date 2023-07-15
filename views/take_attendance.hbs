@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        input {
+            background-color: rgba(3, 109, 74, 0.685);
+            color: white;
+            border: 1px solid white;
+            border-radius: .4rem;
+        }
+
+    </style>
+    <title>Take Attendance</title>
+</head>
+
+<body style="background-color: rgb(14, 102, 102); margin:auto; color:white">
+    <h1>table for taking attendance</h1>
+    <div style="color:white; text-align:center">
+        <form action="/take_attendance" method="POST">
+            <div class="row">
+                <table class="table table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Serial NO.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Roll No.</th>
+                            <th scope="col">Take Attendace</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each data}}
+                        <tr>
+                            <th scope="row">{{this.SerialNumber}}</th>
+                            <td>{{this.FirstName}} {{this.LastName}}</td>
+                            <td>{{this.class}}</td>
+                            <td>{{this.SerialNumber}}</td>
+                            <td><input type="text" name="{{this.class}}Roll{{this.SerialNumber}}"></td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+                <div class="mt-4 pt-2">
+                    <button type="submit" class="btn btn-primary btn-lg"  value="{{data.class}}" name="Class">Submit</button>
+                </div>
+
+
+        </form>
+    </div>
+</body>
+
+</html>
