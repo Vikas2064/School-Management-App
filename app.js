@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const app = express()
 const path = require("path")
 const hbs = require("hbs");
+const bcrypt = require("bcryptjs")
 const bodyParser = require('body-parser');
 
 // manageing the database admin
@@ -15,7 +16,8 @@ const { admins, teachers, students, approveStudents, approveTeachers, class1, cl
   class5Att,
   class6Att,
   class7Att,
-  class8Att } = require("./db/config");
+  class8Att,
+  notice } = require("./db/config");
 app.use(express.json());
 
 // teacher sign_page
@@ -49,14 +51,15 @@ app.get('/admin', (req, res) => {
 app.post('/admin', async (req, res) => {
   let data = await admins.find({
     Email: req.body.email,
-    Password: req.body.password
   });
-  if (data.length > 0) {
-    console.log(data);
-    res.render("admin_dashboard");
+
+  const isMatch= await bcrypt.compare(req.body.password,data[0].Password)
+  if (data.length > 0  && isMatch) {
+    res.render("admin_dashboard",{
+      data:data[0]    
+    });
   }
-  else {
-    console.log(data);
+  else {      
     res.send("please enter the valid details");
   }
 
@@ -71,7 +74,7 @@ app.post('/admin_form', async (req, res) => {
   try {
     let data = new admins(req.body);
     let result = await data.save();
-    res.status(200).send(data);
+    res.status(200).send("New admin Added successfully");
   } catch (error) {
     if (error.name === "ValidationError") {
       let errors = {};
@@ -192,7 +195,6 @@ app.get('/show_attendance', (req, res) => {
 })
 
 // attendance page ends here 
-
 
 /// admin_dashboard end here
 
@@ -318,9 +320,6 @@ app.post('/approve_student', async (req, res) => {
 
 // admin students page end here
 
-
-
-
 // students page start here
 app.get("/student_approval_form", (req, res) => {
   res.render("student_approval_form")
@@ -348,15 +347,68 @@ app.post('/student_approval_form', async (req, res) => {
 app.get('/admin_notice_page', (req, res) => {
   res.render("admin_notice_page");
 })
+///////////////admin notice page start here/////////////////
+app.get("/student_notice_page",async(req,res)=>{
+     let data=await notice.find();
+     if(data[0].student)
+     {
+        res.render("student_notice_page",{
+          notice:data[0].student
+        })
+     }
+     else
+     {
+      res.render("student_notice_page",{
+        notice:"there is no notice for the students"
+      })
+     }
+})
+app.get("/teacher_notice_page",async(req,res)=>{
+  let data=await notice.find();
+  if(data[0].teacher)
+  {
+     res.render("teacher_notice_page",{
+       notice:data[0].teacher
+     })
+  }
+  else
+  {
+    res.render("teacher_notice_page",{
+      notice:"there is no notice for the teacher"
+    })
+  }
+})
+app.post("/admin_notice_page",async(req,res)=>{
+    if(req.body.notice)
+    {
+        if(req.body.student)
+        {
+          let data = new notice({
+            student:req.body.notice
+          })
+          let result = await data.save();
+          console.log(result);
+          res.send("notice send successfullly");
+        }
+        else
+        {
+          let data = new notice({
+            teacher:req.body.notice
+          })
+          let result = await data.save();
+          console.log(result);
+          res.send("notice send successfullly");
+        }
+    }
+    else
+    {
+       res.send("no notice is here to send")
+    }
 
-
-
+})
 
 
 ////////////////// admin part ends here
-
-
-
 
 //////////// teacher page start here 
 
@@ -365,22 +417,22 @@ app.get('/teacher', (req, res) => {
 })
 
 app.post('/teacher', async (req, res) => {
-  let data = await teachers.find({
+ 
+  const data = await teachers.find({
     Email: req.body.email,
-    Password: req.body.password
   });
-  if (data.length > 0) {
-    console.log(data);
-    res.render("teacher_dashboard");
+ const  isMatch= await bcrypt.compare(req.body.password,data[0].Password);  
+
+  if (data.length > 0 && isMatch) {
+    res.render("teacher_dashboard",{
+      data:data[0]
+    });
   }
   else {
-    console.log(data);
     res.send("please enter the valid details");
   }
 
 })
-
-
 
 app.get('/teacher_dashboard', (req, res) => {
   res.render("teacher_dashboard");
@@ -391,21 +443,9 @@ app.get('/teacher_form', (req, res) => {
 })
 
 app.post('/teacher_form', async (req, res) => {
-  try {
-    let data = new teachers(req.body);
-    await data.save();
-    res.status(200).send(data);
-  } catch (error) {
-    if (error.name === "ValidationError") {
-      let errors = {};
-      Object.keys(error.errors).forEach((key) => {
-        errors[key] = error.errors[key].message;
-      });
-      return res.status(400).send(errors);
-    }
-    else
-      res.status(500).send("Something went wrong");
-  }
+  let data = new teachers(req.body);
+  let result = await data.save();
+  res.send("wait for approval")
 })
 
 
@@ -431,7 +471,6 @@ app.post('/teacher_approval_form', async (req, res) => {
 
   }
 })
-
 //////teacher page ends here
 
 
@@ -441,8 +480,19 @@ app.get('/student', (req, res) => {
   res.render("student");
 })
 
-app.post('/student', (req, res) => {
-  
+app.post('/student', async(req, res) => {
+  let newclass = `class${req.body.Class}`;
+  let data=await eval(newclass).find({
+    Email:req.body.email,
+    // Password:req.body.password
+  })
+  const isMatch=await bcrypt.compare(req.body.password,data[0].Password);
+  if(data.length>0 && isMatch )
+  {         
+    res.render("student_dashboard",{
+        data:data[0]
+    })
+  }
 })
 
 
@@ -485,9 +535,9 @@ app.post("/total_attendance", async (req, res) => {
   
   if (req.body.but1) {
     var dateObj = new Date();
-    let month = dateObj.getUTCMonth() + 1; 
-    let day = dateObj.getUTCDate();
-    let year = dateObj.getUTCFullYear();
+    let month = dateObj.getMonth() + 1; 
+    let day = dateObj.getDate();
+    let year = dateObj.getFullYear();
   
     let newdate = year + "/" + month + "/" + day;
     let newclass = `class${req.body.but1}`;
@@ -509,20 +559,16 @@ app.post("/total_attendance", async (req, res) => {
     });
   }
   else {
-    let newclass = `class${req.body.but2}`;
-    let newclassAtt= `class${req.body.but2}Att`;
-    let datas = await eval(newclass).find();
-    let datas2= await eval(newclassAtt).find();
-    let ind=0;
+    res.render("date");
   }
 })
 
 app.post("/take_attendance", async (req, res) => {
   let newdata = req.body;
   let dateObj = new Date();
-  let month = dateObj.getUTCMonth() + 1; 
-  let day = dateObj.getUTCDate();
-  let year = dateObj.getUTCFullYear();
+  let month = dateObj.getMonth() + 1; 
+  let day = dateObj.getDate();
+  let year = dateObj.getFullYear();
 
   let newdate = year + "/" + month + "/" + day;
   newdata.date=newdate;
@@ -568,6 +614,30 @@ app.post("/take_attendance", async (req, res) => {
   }
   res.send("done")
 });
+
+// ///////////////////////////////not completed//////////////////////////////////////////
+app.post("/date",async(req,res)=>{
+    let newclass = `class${req.body.Class}`;
+    let newclassAtt= `class${req.body.Class}Att`;
+    let datas = await eval(newclass).find();
+    let datas2= await eval(newclassAtt).find({
+      date:req.body.date
+    });
+    if(!datas)
+    {
+      res.send("no attendance data is here");
+    }   
+    let ind=1;
+    datas.forEach((data, index) => {
+      datas[index].SerialNumber = index + 1;
+    });
+    res.render("see_attendance",{
+      data:datas
+    })
+})
+
+
+
 app.listen(port, () => {
   console.log("listening at the port 3000");
 })

@@ -34,7 +34,7 @@
             position: relative;
             left: 30px;
         }
-          
+
         .left_area h3 {
             color: #fff;
             margin: 0px;
@@ -102,7 +102,7 @@
             transition: 0.5s;
 
         }
-     
+
         .sidebar a:hover {
             background: #19B3D3;
         }
@@ -157,91 +157,49 @@
             display: none;
         }
     </style>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-
-
 </head>
 
 <body>
 
-   <input type="checkbox" id="check">
-  <!--header area start-->
-  <header>
-    <label for="check">
-      <i class="fas fa-bars" id="sidebar_btn"></i>
-    </label>
-    <div class="left_area">
-      <h3>School Management</h3>
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>School Management</h3>
+        </div>
+        <div class="right_area">
+            <a href="/teacher" class="logout_btn">Logout</a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div>
+            <img src="CSS/images/teacher.png" class="profile_image" alt="">
+            <h4>{{data.FirstName}} {{data.LastName}}</h4>
+        </div>
+
+        <a href="/teacher_dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>  
+        <a href="/teacher_notice_page"><i class="fas fa-address-card"></i><span>see Notice</span></a>
+
+
     </div>
-    <div class="right_area">
-      <a href="/admin" class="logout_btn">Logout</a>
-    </div>
-  </header>
-  <!--header area end-->
-  <!--sidebar start-->
-  <div class="sidebar">
-    <div>
-
-      <img src="CSS/images/admin.png" class="profile_image" alt="">
-      <h4>{{data.FirstName}} {{data.LastName}}</h4>
-
-    </div>
-
-    <a href="/admin_dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-    <a href="/admin_teacher_page"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
-    <a href="/admin_student_page"><i class="fas fa-user-graduate"></i><span>Student</span></a>
-    <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>
-    <a href="/admin_form"><i class="fas fa-address-card"></i><span>Add new admin</span></a>
-    <a href="/admin_notice_page"><i class="fas fa-bullhorn"></i><span>Notice</span></a>
-
-  </div>
     <!--sidebar end-->
 
 
     <!--content start-->
     <div class="content" style="background-color: rgb(36 101 97);">
-        <div >
+        <div>
 
-            <div style="margin-top: 6rem ;margin-bottom: 4rem; position: fixed; display: flex;">
-                <div class="card" style="width: 18rem; margin: 0.3rem;">
-                    <div class="card-body">
-                      <a href="/total_student" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        Total student
-                      </div>
-                        
-                      </a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem; margin: 0.3rem;">
-                    <div class="card-body">
-                      <a href="/total_teacher" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        total teacher
-                      </div>
-                        
-                      </a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem; margin: 0.3rem;">
-                    <div class="card-body">
-                      <a href="#" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        teacher salary 
-                      </div>
-                        
-                      </a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem; margin: 0.3rem;">
-                    <div class="card-body">
-                      <a href="#" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        student fees
-                      </div>
-                      </a>
+            <div style="margin: 6rem; position: fixed; display: flex;">
+                <div class="card" style="width: 18rem; margin: 0.4rem;">
+                    <div style="margin: 5rem;">
+                                {{notice}}
                     </div>
                 </div>
             </div>

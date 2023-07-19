@@ -37,6 +37,12 @@
             font-weight: 900;
         }
 
+        .left_area {
+            top: -0.8rem;
+            position: relative;
+            left: 30px;
+        }
+
         .left_area span {
             color: #19B3D3;
         }
@@ -110,7 +116,6 @@
             color: #fff;
             position: fixed;
             cursor: pointer;
-            left: 300px;
             font-size: 20px;
             margin: 5px 0;
             transition: 0.5s;
@@ -162,82 +167,82 @@
 <body>
 
     <input type="checkbox" id="check">
-  <!--header area start-->
-  <header>
-    <label for="check">
-      <i class="fas fa-bars" id="sidebar_btn"></i>
-    </label>
-    <div class="left_area">
-      <h3>School Management</h3>
+    <!--header area start-->
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>School Management</h3>
+        </div>
+        <div class="right_area">
+            <a href="/admin" class="logout_btn">Logout</a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div>
+
+            <img src="CSS/images/admin.png" class="profile_image" alt="">
+            <h4>{{data.FirstName}} {{data.LastName}} </h4>
+
+        </div>
+
+        <a href="/admin_dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/admin_teacher_page"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
+        <a href="/admin_student_page"><i class="fas fa-user-graduate"></i><span>Student</span></a>
+        <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>
+        <a href="/admin_form"><i class="fas fa-address-card"></i><span>Add new admin</span></a>
+        <a href="/admin_notice_page"><i class="fas fa-bullhorn"></i><span>Notice</span></a>
+
+
     </div>
-    <div class="right_area">
-      <a href="/admin" class="logout_btn">Logout</a>
-    </div>
-  </header>
-  <!--header area end-->
-  <!--sidebar start-->
-  <div class="sidebar">
-    <div>
-
-      <img src="CSS/images/admin.png" class="profile_image" alt="">
-      <h4>name of the admin </h4>
-
-    </div>
-
-    <a href="/admin_dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-    <a href="/admin_teacher_page"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
-    <a href="/admin_student_page"><i class="fas fa-user-graduate"></i><span>Student</span></a>
-    <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>
-    <a href="/admin_fee"><i class="fas fa-search-dollar"></i><span>Fee</span></a>
-    <a href="/admin_notice_page"><i class="fas fa-bullhorn"></i><span>Notice</span></a>
-
-
-  </div>
     <!--sidebar end-->
 
 
     <!--content start-->
-     <div class="content" style="background-color: rgb(36 101 97);">
-        <div >
+    <div class="content" style="background-color: rgb(36 101 97);">
+        <div>
 
             <div style="margin-top: 6rem ;margin-bottom: 4rem; position: fixed; display: flex;">
                 <div class="card" style="width: 18rem; margin: 0.3rem;">
-                    <div class="card-body" >
-                      <a href="/total_student" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        view student
-                      </div>
-                        
-                      </a>
+                    <div class="card-body">
+                        <a href="/total_student" class="btn btn-info">
+                            <div style="margin: 5rem;">
+                                view student
+                            </div>
+
+                        </a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem; margin: 0.3rem;">
                     <div class="card-body">
-                      <a href="/add_student" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                       add student
-                      </div>
-                        
-                      </a>
+                        <a href="/add_student" class="btn btn-info">
+                            <div style="margin: 5rem;">
+                                add student
+                            </div>
+
+                        </a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem; margin: 0.3rem;">
                     <div class="card-body">
-                      <a href="/approve_student" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        approve student
-                      </div>
-                        
-                      </a>
+                        <a href="/approve_student" class="btn btn-info">
+                            <div style="margin: 5rem;">
+                                approve student
+                            </div>
+
+                        </a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem; margin: 0.3rem;">
                     <div class="card-body">
-                      <a href="#" class="btn btn-info">
-                      <div style="margin: 5rem;">
-                        view fee
-                      </div>
-                      </a>
+                        <a href="#" class="btn btn-info">
+                            <div style="margin: 5rem;">
+                                view fee
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -29,6 +29,12 @@
       z-index: 1;
     }
 
+    .left_area {
+      top: -0.8rem;
+      position: relative;
+      left: 30px;
+    }
+
     .left_area h3 {
       color: #fff;
       margin: 0px;
@@ -110,7 +116,6 @@
       color: #fff;
       position: fixed;
       cursor: pointer;
-      left: 300px;
       font-size: 20px;
       margin: 5px 0;
       transition: 0.5s;
@@ -151,7 +156,8 @@
     #check {
       display: none;
     }
-    .notice_input{
+
+    .notice_input {
       margin: 2rem;
       padding: 1rem;
       height: 25vh;
@@ -160,6 +166,9 @@
       border: 2px solid #0000004d;
       color: #c23636;
       border-radius: 1rem;
+    }
+    button{
+      margin: 5px;
     }
   </style>
 
@@ -190,7 +199,7 @@
     <div>
 
       <img src="CSS/images/admin.png" class="profile_image" alt="">
-      <h4>name of the admin </h4>
+      <h4>{{data.FirstName}} {{data.LastName}} </h4>
 
     </div>
 
@@ -198,7 +207,7 @@
     <a href="/admin_teacher_page"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
     <a href="/admin_student_page"><i class="fas fa-user-graduate"></i><span>Student</span></a>
     <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>
-    <a href="/admin_fee"><i class="fas fa-search-dollar"></i><span>Fee</span></a>
+    <a href="/admin_form"><i class="fas fa-address-card"></i><span>Add new admin</span></a>
     <a href="/admin_notice_page"><i class="fas fa-bullhorn"></i><span>Notice</span></a>
 
 
@@ -214,12 +223,18 @@
 
         <div style="color:white; text-align:center">
           <h1>notification from the Principle </h1>
-       </div>
-        {{!-- <div class="notice"> --}}
-            <form action="">
-              <input id="notice_input" type="text" value="enter the noticification">
-            </form>
-        {{!-- </div> --}}
+        </div>
+        <form action="" method="post">
+          <div  style="margin: 2rem; ">
+            <textarea class="form-control" id="textAreaExample" rows="4"
+              style="background-color:rgb(88, 136, 141);border: 1px solid black; border-radious:.5rem ; color:white"
+              name="notice">Enter the notice here</textarea>
+          </div>
+          <div style="position:relative;display:inline;margin:1.5rem">
+              <button type="submit" class="btn btn-primary btn-lg" name="student" value="student" >Student </button>
+              <button type="submit" class="btn btn-primary btn-lg" name="teacher" value="teacher"> Teacher </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

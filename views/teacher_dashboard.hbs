@@ -29,6 +29,12 @@
             z-index: 1;
         }
 
+        .left_area {
+            top: -0.8rem;
+            position: relative;
+            left: 30px;
+        }
+
         .left_area h3 {
             color: #fff;
             margin: 0px;
@@ -110,7 +116,6 @@
             color: #fff;
             position: fixed;
             cursor: pointer;
-            left: 300px;
             font-size: 20px;
             margin: 5px 0;
             transition: 0.5s;
@@ -152,68 +157,64 @@
             display: none;
         }
     </style>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-
-
 </head>
 
 <body>
 
-   <input type="checkbox" id="check">
-  <!--header area start-->
-  <header>
-    <label for="check">
-      <i class="fas fa-bars" id="sidebar_btn"></i>
-    </label>
-    <div class="left_area">
-      <h3>School Management</h3>
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>School Management</h3>
+        </div>
+        <div class="right_area">
+            <a href="/teacher" class="logout_btn">Logout</a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div>
+            <img src="CSS/images/teacher.png" class="profile_image" alt="">
+            <h4>{{data.FirstName}} {{data.LastName}}</h4>
+        </div>
+
+        <a href="/teacher_dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>  
+        <a href="/teacher_notice_page"><i class="fas fa-address-card"></i><span>see Notice</span></a>
+
+
     </div>
-    <div class="right_area">
-      <a href="/teacher" class="logout_btn">Logout</a>
-    </div>
-  </header>
-  <!--header area end-->
-  <!--sidebar start-->
-  <div class="sidebar">
-    <div>
-      <img src="CSS/images/teacher.png" class="profile_image" alt="">
-      <h4> teacher name</h4>
-    </div>
-
-    <a href="/teacher_dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a> 
-
-    <a href="/admin_attendance_page"><i class="fas fa-address-card"></i><span>Attendance</span></a>
-
-
-  </div>
     <!--sidebar end-->
 
 
     <!--content start-->
-    <div class="content" style="background-color: rgb(36 101 97);" >
-        <div >
+    <div class="content" style="background-color: rgb(36 101 97);">
+        <div>
 
             <div style="margin: 6rem; position: fixed; display: flex;">
                 <div class="card" style="width: 18rem; margin: 0.4rem;">
                     <div class="card-body">
-                      <a href="#" class="btn btn-primary">
-                      <div style="margin: 5rem;">
-                        see the classes sechdule
-                      </div>
-                        
-                      </a>
+                        <a href="#" class="btn btn-primary">
+                            <div style="margin: 5rem;">
+                                see the classes sechdule
+                            </div>
+
+                        </a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem; margin: 0.3rem;">
                     <div class="card-body">
-                      <a href="#" class="btn btn-primary">
-                      <div style="margin: 5rem;">
-                        take Atten
-                      </div>
-                        
-                      </a>
+                        <a href="#" class="btn btn-primary">
+                            <div style="margin: 5rem;">
+                                take Atten
+                            </div>
+
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 const mongoose=require("mongoose");
+const bcrypt = require("bcryptjs")
 const conn1 = mongoose.createConnection("mongodb://localhost:27017/Attendance");
 const conn2 = mongoose.createConnection("mongodb://localhost:27017/Student");
 
@@ -51,10 +52,15 @@ const adminsch= new mongoose.Schema({
     }
 })
 
+adminsch.pre("save",async function(next){
+    this.Password =await bcrypt.hash(this.Password,10);
+    next();
+})
+
 // tacherschema
 const teachersch= new mongoose.Schema({
-    FirstName:String,
-    LastName:String,
+    FirstName: {String,},
+    LastName: {String,},
     DOB:{
         type : String,
         validate: [validateDOB, 'Please fill a valid DOB']
@@ -81,11 +87,16 @@ const teachersch= new mongoose.Schema({
     }
 })
 
+teachersch.pre("save",async function(next){
+       this.Password = await bcrypt.hash(this.Password,10);
+       next();
+})
+
 // studentshema 
 
 const studentsch= new mongoose.Schema({ 
-    FirstName:String,
-    LastName:String,
+    FirstName: {String,},
+    LastName: {String,},
     DOB:{
         type : String,
         validate: [validateDOB, 'Please fill a valid DOB'],
@@ -111,6 +122,11 @@ const studentsch= new mongoose.Schema({
        }
 })
 
+studentsch.pre("save",async function(next){
+    this.Password = await bcrypt.hash(this.Password,10);
+    next();
+})
+
 // schema for the attendance
 const attendanceSch= mongoose.Schema({
     date:{
@@ -121,16 +137,24 @@ const attendanceSch= mongoose.Schema({
     Roll2:String,
     Roll3:String,
     Roll4:String,
-    // 5:String,
-    // 6:String,   
-    // 7:String,
-    // 8:String,
-    // 9:String,
-    // 10:String,
-    // 11:String,
-    // 12:String,
+    5:String,
+    6:String,   
+    7:String,
+    8:String,
+    9:String,
+    10:String,
+    11:String,
+    12:String,
 })
 
+
+const noticeSch= mongoose.Schema({
+    student:String,
+    teacher:String
+})
+ 
+
+const notice= conn2.model("notice",noticeSch);
 const admins=conn2.model("admin",adminsch);
 const teachers=conn2.model('teacher',teachersch)
 const students=conn2.model('student',studentsch);
@@ -173,7 +197,8 @@ module.exports={
     class5Att:class5Att,
     class6Att:class6Att,
     class7Att:class7Att,
-    class8Att:class8Att
+    class8Att:class8Att,
+    notice:notice
 }
 
 
