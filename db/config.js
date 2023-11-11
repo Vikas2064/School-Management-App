@@ -59,8 +59,8 @@ adminsch.pre("save",async function(next){
 
 // tacherschema
 const teachersch= new mongoose.Schema({
-    FirstName: {String,},
-    LastName: {String,},
+    FirstName: String,
+    LastName: String,
     DOB:{
         type : String,
         validate: [validateDOB, 'Please fill a valid DOB']

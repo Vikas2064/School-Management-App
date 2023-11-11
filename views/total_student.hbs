@@ -8,114 +8,126 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Total Student</title>
     <style>
-        button{
+        button {
             background-color: rgb(13, 13, 163);
             border: 1px solid rgb(53, 53, 207);
             color: white;
             border-radius: .5rem;
         }
+        .table_style{
+            position: relative;
+            background-color: rgba(0, 40, 86, 0.93);
+            border: 2px solid rgb(50, 112, 136);
+            border-radius: 1rem;
+            margin: auto;
+            height: 80vh;
+            width: 80vw;
+            z-index: 2;
+        }
     </style>
 </head>
 
-<body style="background-color: rgb(0 100 146 / 79%);color:white;">
+<body style="background-color: rgba(1, 116, 78, 0.977);color:white;">
     <div style="margin:2rem; text-align:center">
         <h1>
             Tabel to show the student
         </h1>
     </div>
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">S NO.</th>
-                <th scope="col">Class</th>
-                <th scope="col">See Student</th>
-                {{!-- <th scope="col">See Attendance</th> --}}
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>1</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="1" name="but1">Click Here</button>
-                 </form>
-                </td>
-                {{!-- <td><button><a href="/see_attendance">See atte</a></button></td> --}}
-            </tr>
-             <tr>
-                <th scope="row">2</th>
-                <td>2</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="2" name="but1">Click Here</button>
-                 </form>
-                </td>
-                {{!-- <td><button>See attendance</button></td> --}}
-            </tr>
-             <tr>
-              <th scope="row">3</th>
-                <td>3</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="3" name="but1">Click Here</button>
-                 </form>
-                </td>
-                {{!-- <td><button>See attendance</button></td> --}}
-            </tr>
-             <tr>
-                <th scope="row">4</th>
-                <td>4</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="4" name="but1">Click Here</button>
-                 </form>
-                </td>
-            </tr>
-             <tr>
-                <th scope="row">5</th>
-                <td>5</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="5" name="but1">Click Here</button>
-                 </form>
-                </td>
-            </tr>
-             <tr>
-                <th scope="row">6</th>
-                <td>6</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="6" name="but1">Click Here</button>
-                 </form>
-                </td>
-            </tr>
-             <tr>
-                <th scope="row">7</th>
-                <td>7</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="7" name="but1">Click Here</button>
-                 </form>
-                </td>
-            </tr>
-             <tr>
-               <th scope="row">8</th>
-                <td>8</td>
-                <td>
-                 <form action="" method="post">
-                    <button value="8" name="but1">Click Here</button>
-                 </form>
-                </td>
-            </tr>
-            <tr>{{index.js}}</tr>
-        </tbody>
-    </table>
-   <script>
+    <div class="table_style">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">S NO.</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">See Student</th>
+                    {{!-- <th scope="col">See Attendance</th> --}}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>1</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="1" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                    {{!-- <td><button><a href="/see_attendance">See atte</a></button></td> --}}
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>2</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="2" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                    {{!-- <td><button>See attendance</button></td> --}}
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>3</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="3" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                    {{!-- <td><button>See attendance</button></td> --}}
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>4</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="4" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>5</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="5" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>6</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="6" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>7</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="7" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>8</td>
+                    <td>
+                        <form action="" method="post">
+                            <button value="8" name="but1">Click Here</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>{{index.js}}</tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
 
 
 
-   </script>
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

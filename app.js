@@ -13,7 +13,7 @@ const { admins, teachers, students, approveStudents, approveTeachers, class1, cl
   class2Att,
   class3Att,
   class4Att,
-  class5Att,
+  class5Att,    
   class6Att,
   class7Att,
   class8Att,
@@ -87,7 +87,7 @@ app.post('/admin_form', async (req, res) => {
       res.status(500).send("Something went wrong");
 
   }
-})
+})      
 
 app.get('/admin_second_page', (req, res) => {
   res.render("admin_second_page");
@@ -103,22 +103,12 @@ app.get('/add_teacher', (req, res) => {
 })
 
 app.post('/add_teacher', async (req, res) => {
-  try {
-    let data = new teachers(req.body);
-    await data.save();
-    res.status(200).send(data);
-  } catch (error) {
-    if (error.name === "ValidationError") {
-      let errors = {};
-      Object.keys(error.errors).forEach((key) => {
-        errors[key] = error.errors[key].message;
-      });
-      return res.status(400).send(errors);
-    }
-    else
-      res.status(500).send("Something went wrong");
+    console.log(req.body);
 
-  }
+    let data=new teachers(req.body);
+    data=await data.save();
+    console.log(data);
+    res.send("data saved")
 })
 
 app.get('/total_teacher', async (req, res) => {
@@ -127,7 +117,7 @@ app.get('/total_teacher', async (req, res) => {
     data: data
   })
 })
-
+    
 
 app.get('/add_student', (req, res) => {
   res.render("add_student_form");
@@ -456,8 +446,8 @@ app.get("/teacher_approval_form", (req, res) => {
 app.post('/teacher_approval_form', async (req, res) => {
   try {
     let data = new approveTeachers(req.body);
-    await data.save();
-    res.status(200).send(data);
+    data=await data.save();
+    res.status(200).send("wait for approval");
   } catch (error) {
     if (error.name === "ValidationError") {
       let errors = {};
@@ -551,7 +541,7 @@ app.post("/total_attendance", async (req, res) => {
     }
     let datas = await eval(newclass).find();
     datas.forEach((data, index) => {
-      datas[index].SerialNumber = index + 1;
+      datas[index].SerialNumber = index + 1;    
     });
     datas.class = req.body.but1;
     res.render("take_attendance", {
